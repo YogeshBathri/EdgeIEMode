@@ -1,0 +1,5 @@
+package qa.solution.test.edgeiemode;
+
+public class EdgeDriver implements Driver{
+
+}

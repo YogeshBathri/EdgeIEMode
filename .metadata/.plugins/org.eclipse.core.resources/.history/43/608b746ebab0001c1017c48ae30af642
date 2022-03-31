@@ -1,0 +1,13 @@
+package qa.solution.test.edgeiemode;
+
+import org.openqa.selenium.WebDriver;
+
+public class EdgeIEModeDriver implements Driver{
+
+	@Override
+	public WebDriver getDriver() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,17 @@
+package qa.solution.test.edgeiemode;
+
+import org.openqa.selenium.WebDriver;
+
+public class EdgeIEModeDriver implements Driver {
+
+	@Override
+	public WebDriver getDriver() {
+
+		System.setProperty("weddriver.ie.driver", "./src/test/resources/driver/IEDriverServer.exe");
+
+		InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+		ieOptions.attachToEdgeChrome();
+		ieOptions.withEdgeExecutablePath("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
+	}
+
+}

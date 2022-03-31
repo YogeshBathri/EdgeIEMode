@@ -1,0 +1,11 @@
+package qa.solution.test.edgeiemode;
+
+public class EdgeIEModeParallel {
+
+	
+	@Test
+	public void testAmazonLogin() {
+		
+	}
+	
+}

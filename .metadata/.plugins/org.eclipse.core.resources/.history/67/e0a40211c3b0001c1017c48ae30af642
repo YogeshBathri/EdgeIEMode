@@ -1,0 +1,68 @@
+package qa.solution.test.edgeiemode;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+public class EdgeIEModeParallel {
+
+	private void jsClick(WebDriver driver, WebElement ele) {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", ele);
+	}
+
+	private void jsSetValue(WebDriver driver, WebElement ele, String value) {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].value='" + value + "';", ele);
+	}
+
+	@Test
+	public void testAmazonLogin() throws InterruptedException {
+		WebDriver driver = null;
+		try {
+			driver = new EdgeIEModeDriver().getDriver();
+
+			driver.get("https://www.amazon.in/");
+			Thread.sleep(2000);
+
+			jsClick(driver, driver.findElement(By.xpath("//a[text()='Sign in securely']")));
+
+			jsSetValue(driver, driver.findElement(By.id("ap_email")), "8871110000");
+
+			jsClick(driver, driver.findElement(By.id("continue")));
+
+			Reporter.log("Success !!");
+		} catch(Exception e){
+			e.printStackTrace();
+		} 
+		finally{
+			driver.close();
+		}
+	}
+
+	@Test
+	public void testAmazonLogin1() throws InterruptedException {
+		WebDriver driver = null;
+		try {
+			driver = new EdgeIEModeDriver().getDriver();
+
+			driver.get("https://www.amazon.in/");
+			Thread.sleep(2000);
+
+			jsClick(driver, driver.findElement(By.xpath("//a[text()='Sign in securely']")));
+
+			jsSetValue(driver, driver.findElement(By.id("ap_email")), "8871110000");
+
+			jsClick(driver, driver.findElement(By.id("continue")));
+
+			Reporter.log("Success !!");
+		} finally {
+			driver.close();
+		}
+
+	}
+
+}

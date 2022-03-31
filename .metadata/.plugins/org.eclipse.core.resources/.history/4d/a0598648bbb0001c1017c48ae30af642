@@ -1,0 +1,13 @@
+package qa.solution.test.edgeiemode;
+
+import org.testng.annotations.Test;
+
+public class EdgeIEModeParallel {
+
+	
+	@Test
+	public void testAmazonLogin() {
+		
+	}
+	
+}
